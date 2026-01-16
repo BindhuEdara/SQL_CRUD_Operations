@@ -1,5 +1,8 @@
+--------------------------------------------------
+STEP 1: Create Table
+--------------------------------------------------
 
-create  table students (
+create table students (
   id bigint generated always as identity primary key,
   name text not null,
   email text not null,
@@ -8,24 +11,61 @@ create  table students (
   created_at timestamp with time zone default now()
 );
 
+--------------------------------------------------
+STEP 2: Insert Dummy Data
+--------------------------------------------------
 
 insert into students (name, email, age, course)
-values ('Rahul', 'rahul@gmail.com', 22, 'Computer Science'),('Surya', 'surya@gmail.com', 19, 'IT'),('Bindu', 'bindu@gmail.com', 27, 'CSE'),('Ani', 'ani@gmail.com', 16, 'AL&ML'),('Mini', 'mini@gmail.com', 21, 'Electrical'),('Soni', 'soni@gmail.com', 30, 'Computers'),('Thor', 'thor@gmail.com', 18, 'MPC')
+values
+  ('Rahul', 'rahul@gmail.com', 22, 'Computer Science'),
+  ('Surya', 'surya@gmail.com', 19, 'IT'),
+  ('Bindu', 'bindu@gmail.com', 27, 'CSE'),
+  ('Ani', 'ani@gmail.com', 16, 'AI & ML'),
+  ('Mini', 'mini@gmail.com', 21, 'Electrical'),
+  ('Soni', 'soni@gmail.com', 30, 'Computers'),
+  ('Thor', 'thor@gmail.com', 18, 'MPC');
 
+--------------------------------------------------
+STEP 3: Read Data
+--------------------------------------------------
 
--- Read data
+-- Fetch all students
+select * from students;
+
+-- Fetch students older than 20
 select * from students
-select * from students where age > 20
-select name, email from students;
-select * from students where course='Computer Science'
+where age > 20;
 
--- Update data
-update students set age=25 where id=4
-update students set course ='Information Technology' where course='IT'
+-- Fetch only name and email
+select name, email
+from students;
 
--- Delete data
-delete from students where id=7
-delete from students where age <20
+-- Fetch students enrolled in a specific course
+select * from students
+where course = 'Computer Science';
 
+--------------------------------------------------
+STEP 4: Update Data
+--------------------------------------------------
 
+-- Update age of one student (using id)
+update students
+set age = 25
+where id = 4;
 
+-- Update course for all students enrolled in IT
+update students
+set course = 'Information Technology'
+where course = 'IT';
+
+--------------------------------------------------
+STEP 5: Delete Data
+--------------------------------------------------
+
+-- Delete one student using id
+delete from students
+where id = 7;
+
+-- Delete all students below a certain age
+delete from students
+where age < 20;
