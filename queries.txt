@@ -1,0 +1,31 @@
+
+create  table students (
+  id bigint generated always as identity primary key,
+  name text not null,
+  email text not null,
+  age int,
+  course text not null,
+  created_at timestamp with time zone default now()
+);
+
+
+insert into students (name, email, age, course)
+values ('Rahul', 'rahul@gmail.com', 22, 'Computer Science'),('Surya', 'surya@gmail.com', 19, 'IT'),('Bindu', 'bindu@gmail.com', 27, 'CSE'),('Ani', 'ani@gmail.com', 16, 'AL&ML'),('Mini', 'mini@gmail.com', 21, 'Electrical'),('Soni', 'soni@gmail.com', 30, 'Computers'),('Thor', 'thor@gmail.com', 18, 'MPC')
+
+
+-- Read data
+select * from students
+select * from students where age > 20
+select name, email from students;
+select * from students where course='Computer Science'
+
+-- Update data
+update students set age=25 where id=4
+update students set course ='Information Technology' where course='IT'
+
+-- Delete data
+delete from students where id=7
+delete from students where age <20
+
+
+
