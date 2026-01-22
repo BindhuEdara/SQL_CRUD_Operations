@@ -23,7 +23,8 @@ values
   ('Ani', 'ani@gmail.com', 16, 'AI & ML'),
   ('Mini', 'mini@gmail.com', 21, 'Electrical'),
   ('Soni', 'soni@gmail.com', 30, 'Computers'),
-  ('Thor', 'thor@gmail.com', 18, 'MPC');
+  ('Thor', 'thor@gmail.com', 18, 'MPC'),
+  ('bhuvi', 'bhuvi@gmail.com', 19, 'Computers');
 
 --------------------------------------------------
 STEP 3: Read Data
@@ -32,17 +33,46 @@ STEP 3: Read Data
 -- Fetch all students
 select * from students;
 
+| id | name  | email           | age | course           | created_at                    |
+| -- | ----- | --------------- | --- | ---------------- | ----------------------------- |
+| 1  | Rahul | rahul@gmail.com | 22  | Computer Science | 2026-01-16 08:48:17.303257+00 |
+| 3  | Bindu | bindu@gmail.com | 27  | CSE              | 2026-01-16 08:48:17.303257+00 |
+| 5  | Mini  | mini@gmail.com  | 21  | Electrical       | 2026-01-16 08:48:17.303257+00 |
+| 6  | Soni  | soni@gmail.com  | 30  | Computers        | 2026-01-16 08:48:17.303257+00 |
+| 4  | Ani   | ani@gmail.com   | 25  | AL&ML            | 2026-01-16 08:48:17.303257+00 |
+| 8  | bhuvi | bhuvi@gmail.com | 19  | Computers        | 2026-01-21 10:08:07.63528+00  |
+
 -- Fetch students older than 20
 select * from students
 where age > 20;
+| id | name  | email           | age | course           | created_at                    |
+| -- | ----- | --------------- | --- | ---------------- | ----------------------------- |
+| 1  | Rahul | rahul@gmail.com | 22  | Computer Science | 2026-01-16 08:48:17.303257+00 |
+| 3  | Bindu | bindu@gmail.com | 27  | CSE              | 2026-01-16 08:48:17.303257+00 |
+| 5  | Mini  | mini@gmail.com  | 21  | Electrical       | 2026-01-16 08:48:17.303257+00 |
+| 6  | Soni  | soni@gmail.com  | 30  | Computers        | 2026-01-16 08:48:17.303257+00 |
+| 4  | Ani   | ani@gmail.com   | 25  | AL&ML            | 2026-01-16 08:48:17.303257+00 |
 
 -- Fetch only name and email
 select name, email
 from students;
 
+| name  | email           |
+| ----- | --------------- |
+| Rahul | rahul@gmail.com |
+| Bindu | bindu@gmail.com |
+| Mini  | mini@gmail.com  |
+| Soni  | soni@gmail.com  |
+| Ani   | ani@gmail.com   |
+| bhuvi | bhuvi@gmail.com |
+
 -- Fetch students enrolled in a specific course
 select * from students
 where course = 'Computer Science';
+
+| id | name  | email           | age | course           | created_at                    |
+| -- | ----- | --------------- | --- | ---------------- | ----------------------------- |
+| 1  | Rahul | rahul@gmail.com | 22  | Computer Science | 2026-01-16 08:48:17.303257+00 |
 
 --------------------------------------------------
 STEP 4: Update Data
